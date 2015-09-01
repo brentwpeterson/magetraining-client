@@ -1,0 +1,80 @@
+#page-help-link { /*display:none;*/ }
+#page-helpclient{
+	text-decoration: none;
+	background: url("images/fam_help.gif") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
+    color: #ebebff;
+    line-height: 26px;
+    padding-left: 20px;
+}
+.header-helpclient{ float: right; }
+
+.top-cart #helpclient_container  .block-content {
+    background: none;
+    position: relative;
+    right: 0;
+    top: 0px;
+    width: auto;
+}
+
+#helpclient_container{
+ /*  background: url("header_bg.jpg") repeat-x scroll left bottom #F5F5F5; */
+    background: #ffffff;
+    border-radius: 2px 2px 2px 2px;
+    color: #555555;
+    padding: 8px;
+    position: absolute;
+    text-align: left;
+    top: 80px;
+    right: 0;
+    width: 255px;
+    z-index: 99999999;
+    overflow: hidden; 
+   /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,0 0 8px rgba(82, 168, 236, 0.6);*/
+   -webkit-box-shadow: 1px 1px 1px #D3D3D3; 
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#D3D3D3,direction=125,strength=1)";
+   box-shadow: 1px 3px 3px gray;
+    border: solid thin #CCCCCC;
+}
+
+#helpclient_container li{
+   /* width: 220px;
+      padding: 5px;*/
+    display: block;
+    overflow: auto;
+    background: none;
+    padding-bottom: 10px;
+}
+
+#helpclient_container button.button span{
+   background-color: rgb(117, 178, 211);
+   border: none;
+   border-radius: 2px 2px 2px 2px;
+}
+
+#helpclient_container button.button{
+    margin: 5px;  
+}
+ 
+
+#helpclient_container button.button:hover span{
+   background-color: rgb(120, 189, 218);
+}
+
+#helpclient_container li:hover{
+   /* background-color: white;*/
+}
+
+#helpclient_container a.btn-remove, a.btn-edit {
+    float: right;
+    margin: 1px 0 2px 5px;
+}
+
+#helpclient_container .block-subtitle {
+    font-weight: bold;
+    margin-bottom: 14px;
+    margin-top: 5px;
+}
+#helpclient_container .product-images {
+    float: left;
+    margin-right: 7px;
+}

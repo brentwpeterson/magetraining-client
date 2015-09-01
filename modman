@@ -1,0 +1,6 @@
+app/code/local/Wage/Helpclient/	app/code/local/Wage/Helpclient/
+app/design/adminhtml/default/default/layout/helpclient.xml	app/design/adminhtml/default/default/layout/helpclient.xml
+app/design/adminhtml/default/default/template/helpclient/	app/design/adminhtml/default/default/template/helpclient/
+app/etc/modules/Wage_Helpclient.xml	app/etc/modules/Wage_Helpclient.xml
+js/help/	js/help/
+skin/adminhtml/default/default/helpclient.css	skin/adminhtml/default/default/helpclient.css

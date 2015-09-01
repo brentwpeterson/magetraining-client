@@ -1,0 +1,60 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="nav-bar">
+<!-- menu start -->
+<?php echo $this->getMenuLevel($this->getMenuArray()); ?>
+<!-- menu end -->
+
+    <a id="page-help-link" href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?> style="display:none;" <?php endif; ?> ><?php echo $this->__('Get help for this page') ?></a>
+    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script>
+    
+    <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?>
+	    <div class="header-helpclient">
+	    	<a id="page-helpclient" class="page-helpclient" href="javascript:void(0);"><?php echo $this->__('Mage training help guides') ?></a>
+		</div>
+		<div id="helpclient_container" class="helpclient_container" style="display: none;">
+			<div class="block-content">
+				<p class="block-subtitle">MageTraining Help</p>
+			    <ol id="helpclient-popup" class="helpclient-products-list">
+			    	<?php echo Mage::helper('helpclient')->getHelpProduct(); ?>
+				</ol>
+	            <div class="j-actions">
+	    			<a href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" target="_blank">Default Magento Help</a>
+				</div>
+	            <div class="help-search">
+	    			<input type="text" autocomplete="off" id="helpquery_search" name="helpquery" class="input-text" placeholder="Search MageTraining Help" onkeypress="HelpAjaxObj.locate(event);">
+				</div>
+	            <div class="j-actions">
+	    			<a onclick="HelpAjaxObj.openMyPopup();" href="javascript:void(0);">How to use MageTraining help</a>
+				</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+		    var HelpAjaxObj = new HelpAjax(<?php echo Mage::helper('helpclient')->jsParam($this) ?>);
+		</script>
+	<?php endif; ?>
+</div>
