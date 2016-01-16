@@ -1,10 +1,10 @@
 #page-help-link { /*display:none;*/ }
 #page-helpclient{
 	text-decoration: none;
-	background: url("images/fam_help.gif") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
+    background: url("images/magetraining-icon.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
     color: #ebebff;
     line-height: 26px;
-    padding-left: 20px;
+    padding-left: 45px;
 }
 .header-helpclient{ float: right; }
 
@@ -44,6 +44,8 @@
     background: none;
     padding-bottom: 10px;
 }
+#helpclient_container .help-search {margin: 5px 0; width: 100%;}
+#helpclient_container .help-search input { display: inline-block; padding: 1%; width: 98%;}
 
 #helpclient_container button.button span{
    background-color: rgb(117, 178, 211);
