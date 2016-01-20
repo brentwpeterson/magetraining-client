@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Wage_Helpclient>
+        <Wage_All>
             <active>true</active>
             <codePool>local</codePool>
             <depends>
-                <Wage_All />
+                <Mage_AdminNotification />
             </depends>
-        </Wage_Helpclient>
+        </Wage_All>
     </modules>
 </config> 

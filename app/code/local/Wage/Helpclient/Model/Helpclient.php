@@ -8,21 +8,11 @@ class Wage_Helpclient_Model_Helpclient extends Mage_Core_Model_Abstract
         $this->_init('helpclient/helpclient');
     }
 
-    public function fetchHelpGuideProducts() {
-
-    	$apiuser = Mage::getStoreConfig('helpclient/api/apiuser');
-    	$apipass = Mage::getStoreConfig('helpclient/api/apipass');
-    	$url = Mage::getStoreConfig('helpclient/api/apiurl');
-		$url .= '/api/soap/?wsdl';
+    public function fetchHelpGuideProducts() 
+    {
 
 		$result = array();
-
-		$proxy = new SoapClient($url);
-		$sessionId = $proxy->login($apiuser, $apipass);	
-		if(!empty($sessionId )){
-			$filters = array( array('type' => array('eq'=>'helpadmin')) );
-			$result = $proxy->call($sessionId, 'catalog_product.list', $filters);
-		}
+		$result = Mage::getModel('helpclient/feed')->fetchProducts();
 
 		foreach($result as $value)
 		{
@@ -42,17 +32,16 @@ class Wage_Helpclient_Model_Helpclient extends Mage_Core_Model_Abstract
 			$helpclientModel->setControllerName(trim($value['controller_name']));
 			$helpclientModel->setActionName(trim($value['action_name']));
 			$helpclientModel->setSuffix(trim($value['suffix']));
+			$helpclientModel->setShortDescription(trim($value['short_description']));
 
 			$helpclientModel->save();
 		}
 
-		if(!empty($sessionId )){
-          $videoresult = $proxy->call($sessionId,  'helpapi.helpvideo', array());
-        }
-
-        if($videoresult['video_url']){ $videoUrl = $videoresult['video_url']; }else{ $videoUrl = ''; }
-        if($videoresult['video_width']){ $videoWidth = $videoresult['video_width']; }else{ $videoUrl = ''; }
-        if($videoresult['video_height']){ $videoHeight = $videoresult['video_height']; }else{ $videoUrl = ''; }
+		$videoresult = Mage::getModel('helpclient/feed')->fetchVideos();
+          
+        if($videoresult['video']['url']){ $videoUrl = $videoresult['video']['url']; }else{ $videoUrl = ''; }
+        if($videoresult['video']['width']){ $videoWidth = $videoresult['video']['width']; }else{ $videoUrl = ''; }
+        if($videoresult['video']['height']){ $videoHeight = $videoresult['video']['height']; }else{ $videoUrl = ''; }
 
 
         $helpclientVideo = Mage::getModel('helpclient/video')->load(1);		

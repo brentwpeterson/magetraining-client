@@ -2,30 +2,9 @@
 <config>
     <modules>
         <Wage_Helpclient>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Wage_Helpclient>
     </modules>
-    
-    <admin>
-        <!--routers>
-			<helpclient>
-				<use>admin</use>
-				<args>
-					<module>Wage_Helpclient</module>
-					<frontName>helpclient</frontName>
-				</args>
-			</helpclient>
-        </routers-->
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <wage_helpclient before="Mage_Adminhtml">Wage_Helpclient_Adminhtml</wage_helpclient>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
     <adminhtml>
 		<layout>
 			<updates>
@@ -34,17 +13,6 @@
 				</helpclient>
 			</updates>
 		</layout>
-        <!--events>
-            <core_block_abstract_to_html_after>
-                <observers>
-                    <wage_helpclient>
-                        <type>singleton</type>                            
-                        <class>Wage_Helpclient_Model_Observer</class>
-                        <method>coreBlockAbstractToHtmlAfter</method>
-                    </wage_helpclient>
-                </observers>
-            </core_block_abstract_to_html_after>
-        </events-->
     </adminhtml>   
     <global>
         <models>
@@ -90,11 +58,10 @@
             </helpclient>
         </helpers>
     </global>
-
     <crontab>
         <jobs>
             <fetchhelpguideproducts>
-                <schedule><cron_expr>0 0 * * *</cron_expr></schedule>
+                <schedule><cron_expr>0 * * * *</cron_expr></schedule>
                 <run><model>helpclient/helpclient::fetchHelpGuideProducts</model></run>
             </fetchhelpguideproducts>
         </jobs>

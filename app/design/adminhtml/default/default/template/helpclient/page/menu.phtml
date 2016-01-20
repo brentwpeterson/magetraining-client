@@ -29,13 +29,13 @@
 <?php echo $this->getMenuLevel($this->getMenuArray()); ?>
 <!-- menu end -->
 
-    <a id="page-help-link" href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?> style="display:none;" <?php endif; ?> ><?php echo $this->__('Get help for this page') ?></a>
-    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script>
+    <!--a id="page-help-link" href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?> style="display:none;" <?php endif; ?> ><?php echo $this->__('Get help for this page') ?></a>
+    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script-->
     
-    <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?>
+    <?php //if(Mage::getStoreConfig('helpclient/general/enable')): ?>
 	    <div class="header-helpclient">
-            <a id="page-helpclient" class="page-helpclient" href="javascript:void(0);"><?php echo $this->__('MageTraining help guides') ?></a>
-        </div>
+	    	<a id="page-helpclient" class="page-helpclient" href="javascript:void(0);"><?php echo $this->__('MageTraining help guides') ?></a>
+		</div>
 		<div id="helpclient_container" class="helpclient_container" style="display: none;">
 			<div class="block-content">
 				<p class="block-subtitle">MageTraining Help</p>
@@ -56,5 +56,5 @@
         <script type="text/javascript">
 		    var HelpAjaxObj = new HelpAjax(<?php echo Mage::helper('helpclient')->jsParam($this) ?>);
 		</script>
-	<?php endif; ?>
+	<?php //endif; ?>
 </div>
