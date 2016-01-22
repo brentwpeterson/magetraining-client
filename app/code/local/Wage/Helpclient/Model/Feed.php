@@ -54,9 +54,6 @@ class Wage_Helpclient_Model_Feed extends Mage_Core_Model_Abstract
     public function getFeedData($feedUrl)
     {
         $curl = new Varien_Http_Adapter_Curl();
-        $curl->setConfig(array(
-                              'timeout' => 1
-                         ));
         $curl->write(Zend_Http_Client::GET, $feedUrl, '1.0');
         $data = $curl->read();
         if ($data === false) {
