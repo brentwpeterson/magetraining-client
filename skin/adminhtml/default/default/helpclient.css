@@ -1,10 +1,12 @@
 #page-help-link { /*display:none;*/ }
 #page-helpclient{
-	text-decoration: none;
-    background: url("images/magetraining-icon.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
-    color: #ebebff;
-    line-height: 26px;
-    padding-left: 45px;
+  text-decoration: none;
+  background: url("images/magetraining-icon.png") no-repeat scroll 0 50% rgba(0, 0, 0, 0);
+  background-size: 35px auto;
+  display: block;
+  color: #ebebff;
+  line-height: 27px;
+  padding-left: 38px;
 }
 .header-helpclient{ float: right; }
 
