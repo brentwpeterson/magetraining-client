@@ -73,7 +73,7 @@ class Wage_Helpclient_Helper_Data extends Mage_Core_Helper_Abstract
                           <div class="product-details">
                              <p class="product-name">
                                 <a target="_blank" href="'.$value->getProductUrl().'">'.$value->getName().'</a>
-                                <p>'.$getShortDescription.'</p>
+                                <p>'.$this->stripTags($getShortDescription).'</p>
                              </p>
                           </div>
                        </li>'; 
