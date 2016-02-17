@@ -68,12 +68,12 @@ class Wage_Helpclient_Helper_Data extends Mage_Core_Helper_Abstract
 
            foreach($collection as $value)
            {  
-              if($value->getShortDescription()){ $getShortDescription = substr($value->getShortDescription(),0,100).'...'; }else{ $getShortDescription = ''; }
+              if($value->getHelpModuleDescription()){ $getHelpModuleDescription = substr($value->getHelpModuleDescription(),0,100).'...'; }else{ $getHelpModuleDescription = ''; }
               $html .= '<li class="item">        
                           <div class="product-details">
                              <p class="product-name">
                                 <a target="_blank" href="'.$value->getProductUrl().'">'.$value->getName().'</a>
-                                <p>'.$this->stripTags($getShortDescription).'</p>
+                                <p>'.$this->stripTags($getHelpModuleDescription).'</p>
                              </p>
                           </div>
                        </li>'; 

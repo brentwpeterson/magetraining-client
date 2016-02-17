@@ -32,7 +32,7 @@ class Wage_Helpclient_Model_Helpclient extends Mage_Core_Model_Abstract
 			$helpclientModel->setControllerName(trim($value['controller_name']));
 			$helpclientModel->setActionName(trim($value['action_name']));
 			$helpclientModel->setSuffix(trim($value['suffix']));
-			$helpclientModel->setShortDescription(trim($value['short_description']));
+			$helpclientModel->setHelpModuleDescription(trim($value['help_module_description']));
 
 			$helpclientModel->save();
 		}

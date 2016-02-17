@@ -26,7 +26,7 @@ class Wage_Helpclient_Model_Feed extends Mage_Core_Model_Abstract
                     'controller_name' => (string)$item->controller_name,
                     'action_name' => (string)$item->action_name,
                     'suffix' => (string)$item->suffix,
-                    'short_description' => (string)$item->short_description
+                    'help_module_description' => (string)$item->help_module_description
                 );
             }
 
