@@ -52,7 +52,7 @@ class Wage_Helpclient_Helper_Data extends Mage_Core_Helper_Abstract
            $html = '';
 
            $collection = Mage::getModel('helpclient/helpclient')->getCollection();
-           //$collection->addFieldToFilter('locale_code', $locale_code);
+           $collection->addFieldToFilter('status', 1);
            $collection->addFieldToFilter('front_module', $front_module);
            $collection->addFieldToFilter('controller_name', $controller_name);
            $collection->addFieldToFilter('action_name', $action_name);

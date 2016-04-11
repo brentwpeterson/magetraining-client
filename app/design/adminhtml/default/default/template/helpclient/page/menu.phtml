@@ -29,32 +29,27 @@
 <?php echo $this->getMenuLevel($this->getMenuArray()); ?>
 <!-- menu end -->
 
-    <!--a id="page-help-link" href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" <?php if(Mage::getStoreConfig('helpclient/general/enable')): ?> style="display:none;" <?php endif; ?> ><?php echo $this->__('Get help for this page') ?></a>
-    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script-->
-    
-    <?php //if(Mage::getStoreConfig('helpclient/general/enable')): ?>
-	    <div class="header-helpclient">
-	    	<a id="page-helpclient" class="page-helpclient" href="javascript:void(0);"><?php echo $this->__('MageTraining help guides') ?></a>
-		</div>
-		<div id="helpclient_container" class="helpclient_container" style="display: none;">
-			<div class="block-content">
-				<p class="block-subtitle">MageTraining Help</p>
-			    <ol id="helpclient-popup" class="helpclient-products-list">
-			    	<?php echo Mage::helper('helpclient')->getHelpProduct(); ?>
-				</ol>
-	            <div class="j-actions">
-	    			<a href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" target="_blank">Default Magento Help</a>
-				</div>
-	            <div class="help-search">
-	    			<input type="text" autocomplete="off" id="helpquery_search" name="helpquery" class="input-text" placeholder="Search MageTraining Help" onkeypress="HelpAjaxObj.locate(event);">
-				</div>
-	            <div class="j-actions">
-	    			<a onclick="HelpAjaxObj.openMyPopup();" href="javascript:void(0);">How to use MageTraining help</a>
-				</div>
-            </div>
+    <div class="header-helpclient">
+    	<a id="page-helpclient" class="page-helpclient" href="javascript:void(0);"><?php echo $this->__('MageTraining help guides') ?></a>
+	</div>
+	<div id="helpclient_container" class="helpclient_container" style="display: none;">
+		<div class="block-content">
+			<p class="block-subtitle">MageTraining Help</p>
+		    <ol id="helpclient-popup" class="helpclient-products-list">
+		    	<?php echo Mage::helper('helpclient')->getHelpProduct(); ?>
+			</ol>
+            <div class="j-actions">
+    			<a href="<?php echo Mage::helper('adminhtml')->getPageHelpUrl() ?>" target="_blank">Default Magento Help</a>
+			</div>
+            <div class="help-search">
+    			<input type="text" autocomplete="off" id="helpquery_search" name="helpquery" class="input-text" placeholder="Search MageTraining Help" onkeypress="HelpAjaxObj.locate(event);">
+			</div>
+            <div class="j-actions">
+    			<a onclick="HelpAjaxObj.openMyPopup();" href="javascript:void(0);">How to use MageTraining help</a>
+			</div>
         </div>
-        <script type="text/javascript">
-		    var HelpAjaxObj = new HelpAjax(<?php echo Mage::helper('helpclient')->jsParam($this) ?>);
-		</script>
-	<?php //endif; ?>
+    </div>
+    <script type="text/javascript">
+	    var HelpAjaxObj = new HelpAjax(<?php echo Mage::helper('helpclient')->jsParam($this) ?>);
+	</script>
 </div>

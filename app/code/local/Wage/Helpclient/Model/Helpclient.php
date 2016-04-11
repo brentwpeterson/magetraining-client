@@ -14,6 +14,12 @@ class Wage_Helpclient_Model_Helpclient extends Mage_Core_Model_Abstract
 		$result = array();
 		$result = Mage::getModel('helpclient/feed')->fetchProducts();
 
+		$coreResource = Mage::getSingleton('core/resource');
+		$coreWrite = $coreResource->getConnection('core_write');
+		$table = $coreResource->getTableName('helpclient/helpclient');
+        $updateQuery = 'UPDATE '.$table.' SET status=0';
+ 		$coreWrite->query($updateQuery);
+
 		foreach($result as $value)
 		{
 			$loadedProduct = $this->loadHelpProduct(trim($value['product_id']));
@@ -32,6 +38,7 @@ class Wage_Helpclient_Model_Helpclient extends Mage_Core_Model_Abstract
 			$helpclientModel->setControllerName(trim($value['controller_name']));
 			$helpclientModel->setActionName(trim($value['action_name']));
 			$helpclientModel->setSuffix(trim($value['suffix']));
+			$helpclientModel->setStatus(trim($value['status']));
 			$helpclientModel->setHelpModuleDescription(trim($value['help_module_description']));
 
 			$helpclientModel->save();
